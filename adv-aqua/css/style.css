@@ -1,3 +1,6 @@
+#app{
+  
+}
 @font-face {
 	font-family: 'Azuki';
 	src: url(../font/azukiB.ttf);
@@ -10,8 +13,11 @@ body {
 }
 .button {
 	margin: 10px;
-	text-decoration: none;
-	font: bold 1.5em 'Trebuchet MS',Arial, Helvetica; /*Change the em value to scale the button*/
+  text-decoration: none;
+  font-family: 'Azuki';
+	src: url(../font/azukiB.ttf);
+
+	font-size: 1.5em; /*Change the em value to scale the button*/
 	display: inline-block;
 	text-align: center;
 	color: #fff;
@@ -37,7 +43,7 @@ body {
 }
 
 .button:hover {
-	color: #6aa;
+	color: #76B2FF;
 	box-shadow: 0 0 .1em rgba(0,0,0,0.4);
 	-moz-box-shadow: 0 0 .1em rgba(0,0,0,0.4);
 	-webkit-box-shadow: 0 0 .1em rgba(0,0,0,0.4);
@@ -47,15 +53,15 @@ body {
 }
 .button-blue {
 	background: #4477a1;
-	background:	-webkit-gradient(linear, left top, left bottom, from(#81a8cb), to(#4477a1) );
+	background:	-webkit-gradient(linear, left top, left bottom, from(#81a8cb), to(#493EAC) );
 	background: -moz-linear-gradient(-90deg, #81a8cb, #4477a1);
 	filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#81a8cb', endColorstr='#4477a1');
 }
 
 .button-blue:hover {
 	background: #81a8cb;
-	background:	-webkit-gradient(linear, left top, left bottom, from(#4477a1), to(#81a8cb) );
-	background: -moz-linear-gradient(-90deg, #4477a1, #81a8cb);
+	background:	-webkit-gradient(linear, left top, left bottom, from(#493EAC), to(#81a8cb) );
+	background: -moz-linear-gradient(-90deg, #493EAC, #81a8cb);
 	filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4477a1', endColorstr='#81a8cb');
 }
 
@@ -109,43 +115,55 @@ textarea {
   margin: 0 auto;
   border: medium solid #274D86;
   background-color: rgba(202, 245, 255, 0.95);
-  border-radius: 1vw;
+  border-radius: 5px;
   
 }
 .control-dropdown{
+  display: flex;
+  flex-wrap: wrap;
   width :600px;
   margin: 24px auto;
   margin-bottom:12px;
   text-align: left;
 }
+.control-dropdown select{
+  display: inline-block;
+  width: 100px;
+  margin-right: 20px;
+}
+.control-dropdown span{
+  display: inline-block;
+  width: 50px;
+}
 .adv-screen {
   font-family: Azuki;
   line-height: 190%;
-  width: 896px;
+  width: 902px;
   z-index: 1;
   position: relative;
   padding: 0;
   margin: 1vw auto;
-  border: medium solid #000000;
 }
 .adv-bg {
-  width: 896px;
+  width: 902px;
   z-index: 1;
   position: relative;
-  margin: 0 auto;
+  margin: 0;
   display: block;
-  
+  outline: 2px solid #000000;
 }
 .msg-txt{
   font-size: 24px;
   color: #2D0096;
   white-space: pre-line;
-  width: 896px;
+  width: 890px;
   z-index: 30;
+  transform-origin: 50% 50%;
   top: 78%;
   left: 5%;
   position: absolute;
   text-align: left;
+  
 }
 .msg-txt-shadow{
   font-size: 24px;
@@ -159,10 +177,10 @@ textarea {
   text-align: left;
 }
 .adv-msg {
-  width: 896px;
+  width: 890px;
   z-index: 20;
   top: 66%;
-  left: 50%;
+  left: 49.5%;
   position: absolute;
   transform-origin: 50% 0%;
 
@@ -182,7 +200,52 @@ textarea {
     
     z-index: 10;
 }
-@media screen and (max-width: 896px) {
+.note{
+	border: solid 2px #000F40;
+	background-color: #FFFFFF;
+  width: 856px;
+  text-align: left;
+	margin-top:40px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:30px;
+	display:block;
+	padding:0 20px;
+	border-radius: 5px;        /* CSS3草案 */
+}
+.note ul{
+  padding-left: 0;
+}
+.note li {
+  list-style:none;
+}
+.note li:before { content:"- "; }
+
+.note h4{
+	color: #003587;
+}
+.note p{
+	color: #007;
+	padding:0 10px;
+
+}
+.note a{
+	color: #3762F1;
+	text-decoration: underline;
+}
+.note a:hover{
+	color: #4FBEFF;
+	text-decoration: none;
+}
+@media screen and (max-width: 902px) {
+  .adv-screen {
+    line-height: 2.67vw;
+  }
+  
+  .note{
+    width: 98%;
+    padding:0 1%;
+  }
   .msg-txt{
     font-size: 2.67vw;
   }
@@ -238,10 +301,38 @@ textarea {
   .form-txt{
     width:95%;
   }
+  .msg-txt{
+    transform-origin: 0% 50%;
+    transform: scale(0.75);
+    -webkit-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+  }
+  .msg-txt-shadow{
+    transform-origin: 0% 50%;
+    transform: scale(0.75);
+    -webkit-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+  }
+
   .control-dropdown{
     width: 100%;
     margin: 2.67vw auto;
     margin-bottom: 1.3vw;
+  }
+  
+}  
+@media screen and (max-width: 400px) {
+  .msg-txt{
+    transform-origin: 0% 50%;
+    transform: scale(0.65);
+    -webkit-transform: scale(0.65);
+    -ms-transform: scale(0.65);
+  }
+  .msg-txt-shadow{
+    transform-origin: 0% 50%;
+    transform: scale(0.65);
+    -webkit-transform: scale(0.65);
+    -ms-transform: scale(0.65);
   }
   
 }  

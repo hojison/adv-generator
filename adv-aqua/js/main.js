@@ -34,7 +34,10 @@ const vm = new Vue({
         { id: 2, name: '閉じかけ' },
         { id: 3, name: '閉じ' },
         { id: 4, name: 'ウインク' },
-    ],
+        { id: 5, name: '泣き' },
+        { id: 6, name: '三白眼' },
+        { id: 7, name: '＞＜' },
+      ],
     optionEyebrows: [
       { id: 1, name: 'ハの字' },
       { id: 2, name: '逆ハの字' },
@@ -48,11 +51,19 @@ const vm = new Vue({
       { id: 3, name: '開き' },
       { id: 4, name: '傾き' },
       { id: 5, name: 'よだれ' },
-      { id: 6, name: '開きへの字' }
+      { id: 6, name: '開きへの字' },
+      { id: 7, name: 'ふにゃふにゃ' },
+      { id: 8, name: '全開' },
     ],
     optionEffect: [
       { id: 1, name: 'なし' },
-      { id: 2, name: '怒り' }
+      { id: 2, name: '怒り' },
+      { id: 3, name: '？' },
+      { id: 4, name: '汗（多）' },
+      { id: 5, name: '汗（少）' },
+      { id: 6, name: 'びっくり' },
+      { id: 7, name: 'キラキラ' },
+      { id: 8, name: '影' },
     ],
     optionBg: [
       { id: 1, name: '玄関 - 昼' },
@@ -71,10 +82,10 @@ const vm = new Vue({
       { id: 14, name: 'カフェ' },
       { id: 15, name: '港町' },
     ],
-  eyesDisp: [true, false, false, false, false,], //配列
+  eyesDisp: [true, false, false, false, false, false, false, false], //配列
   eyebrowsDisp: [false, false, true, false, false,], //配列
-  mouthDisp: [false, false, true, false, false,false], //配列
-  effectDisp: [false, false, false, false, false,], //配列
+  mouthDisp: [false, false, true, false, false,false, false, false], //配列
+  effectDisp: [false, false, false, false, false, false, false], //配列
   bgArr:[
     'img/house_enterance_interior_a.jpg',
     'img/house_enterance_interior_b.jpg',
@@ -162,10 +173,10 @@ const vm = new Vue({
     handleResize: function() {
       topPosNum = TOP_OFFSET;
       this.width = window.innerWidth;
-      if(this.width < 896){
-        var ratio = this.width/896.0;
+      if(this.width < 902){
+        var ratio = this.width/902.0;
         this.charaW = 0.75*ratio;
-        this.msgW = 0.97*ratio;
+        this.msgW = 0.94*ratio;
         topPosNum = TOP_OFFSET*ratio;
       }
       else{
